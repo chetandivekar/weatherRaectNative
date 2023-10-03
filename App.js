@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { API_KEY } from "@env";
 import {
   ScrollView,
   View,
@@ -31,7 +31,6 @@ const HorizontalScrollViewExample = () => {
   const [location, setLocation] = useState("Mumbai");
   const [futureData, setFutureData] = useState(null);
   const [test, settest] = useState(null);
-  const API_KEY = "0f8b53a448e44ae3bd8143503230310";
   useEffect(() => {
     fetch(
       `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
@@ -78,7 +77,7 @@ const HorizontalScrollViewExample = () => {
 
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${location}&aqi=no`
     )
       .then((response) => response.json())
       .then((data) => {
