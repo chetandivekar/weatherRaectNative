@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { API_KEY } from "@env";
 import {
   ScrollView,
   View,
@@ -59,7 +58,6 @@ const HorizontalScrollViewExample = () => {
       });
   }, [location]);
   // In your application code
-  console.log("====", process.env.EXPO_PUBLIC_API_KEY);
 
   const getDayOfWeek = (dateString) => {
     const daysOfWeek = [

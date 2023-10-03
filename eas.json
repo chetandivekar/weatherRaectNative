@@ -13,6 +13,10 @@
     "preview3": {
       "developmentClient": true
     },
-    "production": {}
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_API_KEY": "0f8b53a448e44ae3bd8143503230310"
+      }
+    }
   }
 }
