@@ -33,7 +33,7 @@ const HorizontalScrollViewExample = () => {
   const [test, settest] = useState(null);
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.EXPO_PUBLIC_API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -46,7 +46,7 @@ const HorizontalScrollViewExample = () => {
   }, [location]);
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.EXPO_PUBLIC_API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -59,6 +59,7 @@ const HorizontalScrollViewExample = () => {
       });
   }, [location]);
   // In your application code
+  console.log("====", process.env.EXPO_PUBLIC_API_KEY);
 
   const getDayOfWeek = (dateString) => {
     const daysOfWeek = [
@@ -77,7 +78,7 @@ const HorizontalScrollViewExample = () => {
 
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${location}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${process.env.EXPO_PUBLIC_API_KEY}&q=${location}&aqi=no`
     )
       .then((response) => response.json())
       .then((data) => {
